@@ -2,7 +2,7 @@
     "db_address": "172.17.0.2:27017",
     "players": ["kingracado"],
     "url": "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=",
-    "pooling_interval_seconds": 3600,
+    "pooling_interval_seconds": 30,
     "skills": [
         "attack",
         "defense",

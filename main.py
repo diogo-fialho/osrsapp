@@ -23,7 +23,7 @@ logging.info(f'CONFIG loaded {CONFIG}')
 stop = False
 while not stop:
     for player in CONFIG['players']:
-        logging.info(f'loading values for player {player}')
+        logging.debug(f'loading values for player {player}')
 
         values = load_current_values(player)
 
@@ -46,7 +46,7 @@ while not stop:
                         }
                     })
             else:
-                logging.info(f'nothing to do on skill {skill}')
+                logging.debug(f'nothing to do on skill {skill}')
             
     
     pooling_interval_seconds = CONFIG['pooling_interval_seconds']
