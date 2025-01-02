@@ -18,7 +18,6 @@ def load_current_values(player):
         content = values.split(',')
         add = False
         type = 'unknown'
-        print(content)
         if len(content) == 3:
             add = True
             result.append({
