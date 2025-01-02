@@ -13,6 +13,18 @@ services:
     working_dir: /usr/src/app  # Sets the working directory inside the container
     command: python ./main.py  # Runs the app
 
+  app-ge:
+    # build:
+    #   context: .  # Path to the app's Dockerfile
+    #   dockerfile: Dockerfile  # Ensures it uses the provided Dockerfile
+    image: diogofi/osrsgeapp:latest
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+    working_dir: /usr/src/app  # Sets the working directory inside the container
+    command: python ./data_extractor.py  # Runs the app
+
   mongodb:
     image: mongodb/mongodb-community-server:4.4.0-ubuntu2004
     container_name: mongodb

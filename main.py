@@ -24,9 +24,13 @@ stop = False
 while not stop:
     for player in CONFIG['players']:
         logging.debug(f'loading values for player {player}')
+        values = []
 
-        values = load_current_values(player)
-
+        try:
+            values = load_current_values(player)
+        except Exception as e:
+            logging.error(e)
+            
         # get current in db
         for val in values:
             skill = val['name']

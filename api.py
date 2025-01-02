@@ -1,3 +1,4 @@
+import logging
 import requests
 import config
 import datetime
@@ -13,6 +14,9 @@ def load_current_values(player):
     # 2 - current experience
     # Making a get request 
     response = requests.get(full_url)
+    if response.status_code != 200:
+        logging.error(response.text)
+        return []
 
     for values in response.text.split('\n')[1:]:
         content = values.split(',')
